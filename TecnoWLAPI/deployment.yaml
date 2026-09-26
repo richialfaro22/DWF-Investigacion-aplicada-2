@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tecnowlapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tecnowlapi
+  template:
+    metadata:
+      labels:
+        app: tecnowlapi
+    spec:
+      containers:
+        - name: tecnowlapi
+          image: tecnowlapi:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
